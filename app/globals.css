@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --color-cream: #fbf8f1;
+  --color-cream-dark: #f3ecdc;
+  --color-ink: #16211b;
+  --color-ink-soft: #26362d;
+  --color-gold: #d6a324;
+  --color-gold-dark: #8a6608;
+  --color-gold-light: #f0cf6b;
+  --color-terracotta: #b4562a;
+  --color-terracotta-dark: #954620;
+
+  --color-stone-50: #faf9f7;
+  --color-stone-100: #f1efe9;
+  --color-stone-200: #e2ddd1;
+  --color-stone-300: #cbc2ac;
+  --color-stone-400: #a99d80;
+  --color-stone-500: #85795d;
+  --color-stone-600: #675d47;
+  --color-stone-700: #4d4536;
+  --color-stone-800: #362f25;
+  --color-stone-900: #211c16;
+}
+
+@theme inline {
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-inter);
+
+  --color-cream: var(--color-cream);
+  --color-cream-dark: var(--color-cream-dark);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-gold: var(--color-gold);
+  --color-gold-dark: var(--color-gold-dark);
+  --color-gold-light: var(--color-gold-light);
+  --color-terracotta: var(--color-terracotta);
+  --color-terracotta-dark: var(--color-terracotta-dark);
+
+  --color-stone-50: var(--color-stone-50);
+  --color-stone-100: var(--color-stone-100);
+  --color-stone-200: var(--color-stone-200);
+  --color-stone-300: var(--color-stone-300);
+  --color-stone-400: var(--color-stone-400);
+  --color-stone-500: var(--color-stone-500);
+  --color-stone-600: var(--color-stone-600);
+  --color-stone-700: var(--color-stone-700);
+  --color-stone-800: var(--color-stone-800);
+  --color-stone-900: var(--color-stone-900);
+
+  --shadow-card: 0 1px 2px rgba(22, 33, 27, 0.04), 0 8px 24px -8px rgba(22, 33, 27, 0.12);
+  --shadow-card-hover: 0 2px 4px rgba(22, 33, 27, 0.06), 0 16px 40px -12px rgba(22, 33, 27, 0.18);
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: var(--color-gold-light);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-dark);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
