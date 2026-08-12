@@ -14,14 +14,15 @@ interface HeroProps {
 
 export function Hero({ image, imageAlt, eyebrow, title, description, children, size = "large", priority = true }: HeroProps) {
   return (
-    <div className={`relative isolate overflow-hidden ${size === "large" ? "min-h-[70vh]" : "min-h-[42vh]"} flex items-end`}>
+    <div className={`relative isolate overflow-hidden ${size === "large" ? "aspect-[4/3] sm:aspect-[16/9] lg:aspect-[16/8] xl:aspect-[16/7]"
+      : "aspect-[16/9] sm:aspect-[16/7]"} flex items-end`}>
       <Image
         src={image}
         alt={imageAlt}
         fill
         priority={priority}
         sizes="100vw"
-        className="object-cover"
+        className="object-cover object-center"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/10" aria-hidden="true" />
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-14 pt-24 sm:px-6 lg:px-8">
