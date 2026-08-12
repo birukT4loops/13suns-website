@@ -14,8 +14,13 @@ interface HeroProps {
 
 export function Hero({ image, imageAlt, eyebrow, title, description, children, size = "large", priority = true }: HeroProps) {
   return (
-    <div className={`relative isolate overflow-hidden ${size === "large" ? "aspect-[4/3] sm:aspect-[16/9] lg:aspect-[16/8] xl:aspect-[16/7]"
-      : "aspect-[16/9] sm:aspect-[16/7]"} flex items-end`}>
+    <div
+      className={`relative isolate overflow-hidden flex items-end ${
+        size === "large"
+          ? "aspect-[4/3] sm:aspect-[16/9] lg:aspect-auto lg:h-[clamp(28rem,45vw,40rem)]"
+          : "aspect-[16/9] sm:aspect-auto sm:h-[clamp(20rem,30vw,28rem)]"
+      }`}
+    >
       <Image
         src={image}
         alt={imageAlt}
